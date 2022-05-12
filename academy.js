@@ -113,6 +113,22 @@ function checkWinner() {
             return "crosses"
         }
 
+        
+        // Checks for a drawer
+        let drawCounter = 0
+        for (i in board) {
+            for (j in board[i]) {
+                if (board[i][j] != null) {
+                    drawCounter++
+                    console.log(drawCounter)
+                } 
+            }
+            if (drawCounter === 9) {
+                gameOver = true
+                return "nobody"
+            }
+        }
+
         // All winning posibilities
         const winPosibilities = [
             [[0,0], [0,1], [0,2]],
