@@ -1,8 +1,8 @@
 // This file contains helper code beyond the first week "Intro to JavaScript" course content.
 // You should not have to make any changes in this file to get your game working.
 
-document.getElementById('display-player-1-pretext').textContent = "Player 1: "
-document.getElementById('display-player-2-pretext').textContent = "Player 2: "
+document.getElementById('display-player-1-pretext').textContent = "Sonic: "
+document.getElementById('display-player-2-pretext').textContent = "Tails: "
 
 // Validate academite functions are available
 const functions = ["takeTurn", "getBoard", "checkWinner", "resetGame", "submitPlayerNames"];
@@ -30,8 +30,15 @@ function drawBoard(board) {
             if (!board[rowIndex][columnIndex]) {
                 continue;
             }
-            const cellText = board[rowIndex][columnIndex] === "nought" ? "⭕" : "❌";
-            document.getElementById(`row-${rowIndex}-column-${columnIndex}`).innerText = cellText;
+
+            const sonicImage = document.createElement("img");
+            sonicImage.src = "sonic.png"
+
+            const tailsImage = document.createElement("img");
+            tailsImage.src = "tails.png"
+
+            const cellText = board[rowIndex][columnIndex] === "nought" ? sonicImage : tailsImage;
+            document.getElementById(`row-${rowIndex}-column-${columnIndex}`).appendChild(cellText);
         }
     }
 }
@@ -79,8 +86,8 @@ function submitNamesClick(event) {
 
         let playerNoughts = document.getElementById('player-noughts')
         let playerCrosses = document.getElementById('player-crosses')
-        playerNoughts.textContent = "Noughts ⭕ : " + player1
-        playerCrosses.textContent = "Crosses ❌ : " + player2
+        playerNoughts.textContent = "Sonic : " + player1
+        playerCrosses.textContent = "Tails : " + player2
 
         const displaySubmittedNames = document.getElementById('submitted-names')
         displaySubmittedNames.style.display = "block"
