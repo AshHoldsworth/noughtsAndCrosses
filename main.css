@@ -1,5 +1,9 @@
+h1 {
+    color: whitesmoke;
+}
+
 hr {
-    border: 8px solid white;
+    border: 8px solid whitesmoke;
     border-radius: 5px;
 }
 
@@ -7,7 +11,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
     background-color: blue;
+}
+
+#winner-display {
+    display: none;
+    background-color: whitesmoke;
+    color: blue;
+    font-size: large;
+    width: inherit;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
     text-align: center;
+}
+
+.main-display {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#grid {
+    align-self: flex-start;
 }
 
 .column {
@@ -18,23 +42,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
 }
 
 .row {
     width: 400px;
-    margin: 0px auto;
+    margin: 0px;
     display: flex;
     justify-content: center;
 }
 
-.marker {
+img {
     width: 80px;
-    height: 80px;
 }
 
+button {
+    background-color: whitesmoke;
+    border: none;
+    color: blue;
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    width: 100px;
+    margin-top: 10px;
+}
 
 @media screen and (max-width: 500px) {
+
+    .main-display {
+        flex-direction: column;
+    }
 
     .column {
         width: 50px;
@@ -58,31 +94,30 @@ body {
         width: 40px;
         height: 40px;
     }
+
+    img {
+        width: 40px;
+    }
+
+    button {
+        font-size: 10px;
+    }
+
+    #submit-names-form {
+        display: flex;
+        margin: 10px;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        font-size: small;
+    }
+
+    #reset-button {
+        margin: 10px;
+    }
 }
 
-#winner-display {
-    display: none;
-    background-color: whitesmoke;
-    color: blue;
-    font-size: large;
-}
-
-#reset-button{
-    margin: 10px;
-    width: 100px
-}
-
-#submit-names-btn {
-    margin-top: 10px;
-    width: 100px
-}
-
-#submit-names-form {
-    display: flex;
-    margin: 10px;
-    align-items: center;
-    flex-direction: column;
-
+.namesAndScores {
 }
 
 #submitted-names {
@@ -90,11 +125,8 @@ body {
     font-weight: bold;
 }
 
-#display-player-1-pretext {
-    font-weight: bold;
-}
-
-#display-player-2-pretext {
+#submit-names-form {
+    align-items: center;
     font-weight: bold;
 }
 
@@ -103,16 +135,3 @@ body {
     position: fixed;
     font-size: smaller;
 }
-
-button {
-    background-color: whitesmoke;
-    border: none;
-    color: blue;
-    padding: 15px;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  img {
-      width: 80px;
-  }
