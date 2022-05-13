@@ -163,6 +163,15 @@ function checkWinner() {
     } 
 }
 
+// Submit the Player Names.
+function submitPlayerNames(player1, player2) {
+    console.log("submitPlayerNames was called.")
+    console.log("Player 1: " + player1)
+    console.log("Player 2: " + player2)
+
+    return player1, player2
+}
+
 // Set the game state back to its original state to play another game.
 function resetGame() {
     console.log("resetGame was called");
@@ -197,6 +206,7 @@ if (typeof exports === 'object') {
         checkWinner,
         resetGame,
         getBoard,
+        submitPlayerNames,
     }
 } else {
     console.log("Running in Browser")

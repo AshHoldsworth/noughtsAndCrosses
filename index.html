@@ -9,7 +9,7 @@
         type="text/css">
 </head>
 <body>
-  <h1>Noughts & Crosses</h1>
+  <h1>Noughts & Crosses<hr/></h1>
   <p id="winner-display">The winner is <span id="winner-name"></span></p>
   <div id="grid">
     <div class="row"
@@ -40,8 +40,19 @@
            id="row-2-column-2"></div>
     </div>
   </div>
+  <br/>
+  <div id="submitted-names" style="display:none">
+     <p id="player-noughts"></p>
+     <p id="player-crosses"></p>
+  </div>
+  <form style="display:block" id="submit-names-form">
+     <p id="display-player-1-pretext"></p><input id="player-1"/>
+     <p id="display-player-2-pretext"></p><input id="player-2"/>
+     <p><button id="submit-names-btn">Submit</button></p>
+  </form>
   <button id="reset-button">Reset</button>
-  <p>Remember to open your dev tools by pressing F12 to view log messages and errors!</p>
+  <hr/>
+  <div id="text-bottom-page">This is a game made by Ash Holdsworth for the 2022 Sainsbury's Tech Bootcamp</div>
   <script src="academy.js"
         type="text/javascript"></script> 
   <script src="connectors.js"
