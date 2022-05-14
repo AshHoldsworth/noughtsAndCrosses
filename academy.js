@@ -8,12 +8,13 @@ let board = [
 let gameOver = false
 let noughtsTurn = true
 console.log("Noughts Turn")
+let namesSubmitted = false
 
 // Take the row and column number between 0 and 2
 // (inclusive) and update the game state.
 function takeTurn(row, column) {
 
-    if (!gameOver) {
+    if (!gameOver && namesSubmitted === true) {
         console.log("takeTurn was called with row: " + row + ", column:" + column);
         console.log(`takeTurn was called with row: ${row}, column: ${column}`);
         
@@ -32,6 +33,9 @@ function takeTurn(row, column) {
             console.log("Can't choose this piece you melon!")
             console.log(board)
         }
+    } else {
+        console.log("The game is over")
+        alert("Please submit names for Sonic and Tails.")
     }
 }
 
@@ -168,13 +172,14 @@ function submitPlayerNames(player1, player2) {
     console.log("submitPlayerNames was called.")
     console.log("Player 1: " + player1)
     console.log("Player 2: " + player2)
+    namesSubmitted = true
 
     return player1, player2
 }
 
 // Set the game state back to its original state to play another game.
 function resetGame() {
-    console.log("resetGame was called");
+    console.log("resetGame was called.");
 
     board = [
         [null, null, null],
@@ -185,7 +190,23 @@ function resetGame() {
     gameOver = false
     noughtsTurn = true
     console.log("Noughts Turn")
+    namesSubmitted = false
     
+}
+
+function playAgain() {
+    console.log("playAgain was called.")
+
+    board = [
+        [null, null, null],
+        [null, null, null],
+        [null, null, null]
+    ]
+
+    gameOver = false;
+    if (noughtsTurn) {
+        noughtsTurn = false
+    }
 }
 
 // Return the current board state with either a "nought" or a "cross" in

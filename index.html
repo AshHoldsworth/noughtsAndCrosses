@@ -42,10 +42,10 @@
     </div>
   </div>
 
-  <div class="namesAndScores">
+  <div class="names">
      <div id="submitted-names" style="display:none">
-          <p id="player-noughts"></p>
-          <p id="player-crosses"></p>
+          <div class="display-submitted-names"><span id="sonic-image"></span><span id="player-noughts"></span></div>
+          <div class="display-submitted-names"><span id="tails-image"></span><span id="player-crosses"></span></div>
      </div>
           <div>
                <form style="display:block" id="submit-names-form">
@@ -54,8 +54,15 @@
                     <p><button id="submit-names-btn">Submit</button></p>
                </form>
           </div>
-          <button id="reset-button">Reset</button>
-     </div>
+          <span><button id="reset-button">Reset</button>
+          <button id="play-again" style="display:none;">Play again</button></span>
+  </div>
+
+  <div id="scores" style="display: none">
+     <p id="player-1-score"></p>
+     <p id="player-2-score"></p> 
+</div>
+
 </div>
 <hr style="margin-top: 30px;">
   
